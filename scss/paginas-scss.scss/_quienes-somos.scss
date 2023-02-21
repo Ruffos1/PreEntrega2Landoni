@@ -1,0 +1,162 @@
+@import "../base/extend";
+@import "../base/listas";
+@import "../base/mixin";
+/*Mobile First de ¿Quienes Somos?*/
+.footer-inicio{
+    display: none;
+
+}
+.img-somos-desktop-2{
+    display: none;
+}
+.img-somos-desktop{
+    display: none;
+
+}
+.somos-subtexto{
+    display: none;
+}
+/*Estilos de Main*/
+.main-somos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    text-align: center;
+    .img-somos-mobile{
+        margin-bottom: 2.5rem;
+    }
+    .somos-texto{
+        gap: 0.5rem;
+        padding: 0rem 2rem 0rem 2rem;
+     h1{display: inline-block;
+        background-color: nth($titulos , 1);
+        padding: 10px;
+        border-radius: 12px;
+     }
+     .parrafo-1{
+        margin-bottom: 2.5rem;
+     }
+    }
+
+    .registro-somos{
+        @extend %botones;
+        background-color: nth($botones, 1);
+        
+        a{
+            list-style: none;
+            color: black;
+            text-decoration: none;
+        }
+    }
+    .registro-somos:hover{
+        @include botones;
+    }
+}
+@media screen and (min-width:600px){
+   .main-somos{
+    .img-somos-mobile{
+        height: 25rem;
+    }
+    .somos-subtexto{
+        display: block;
+        gap: 0.5rem;
+        padding: 0rem 3rem 0rem 3rem;
+     h2{display: inline-block;
+        background-color: nth($titulos , 2);
+        padding: 10px;
+        border-radius: 12px;
+        font-size: 20px;
+     }
+     .parrafo-2{
+        margin-bottom: 2.5rem;
+        padding: 0rem 5rem 0rem 5rem;
+     }
+    }
+    .registro-somos{
+        width: 10rem 10rem;
+        font-size: large;
+    }
+}
+
+}
+
+@media screen and (min-width:1024px){
+.main-somos{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows:auto ;
+    grid-template-areas:
+    "texto img"
+    "img2 subtexto"
+    "img2 inscripcion"
+     ;
+    grid-row-gap: 1rem;
+     
+    .somos-texto{
+        grid-area: texto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+       h1{
+        margin-bottom: 1.5rem;
+        margin-top: 1rem;
+       }
+       p{
+        padding: 0rem 3rem 0rem 3rem;
+       }
+    }
+    .somos-subtexto{
+        grid-area: subtexto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+    }
+    .img-somos-desktop-2{
+        display: block;
+        grid-area: img2;
+    }
+    .registro-somos{
+        grid-area: inscripcion;
+        position: relative;
+        bottom: 60%;
+       
+    }
+    .img-somos-mobile{
+    display: none;
+    }
+    .img-somos-desktop{
+        grid-area: img;
+        display: block;
+        width: 25rem;
+    }
+    
+}
+.footer-inicio{
+    display: block;
+        display: flex;
+        background-color: #9d9a93;
+        height: 100px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        ul li{
+            list-style: none;
+        }
+        img{
+            height:50px;
+            width:50px;
+            opacity: 0.8;
+            background-color: #579BB1;
+           }
+           img:hover{
+            transform: scale(1.2);
+            opacity: 1;
+        }
+    }
+    
+}

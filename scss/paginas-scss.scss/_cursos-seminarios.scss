@@ -1,0 +1,137 @@
+@import "../base/extend";
+@import "../base/listas";
+@import "../base/mixin";
+/*Estilos de cursos  y seminarios*/
+.footer-cursos{
+    display: none;
+}
+/*Estilos de main*/
+.main-cursos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    .img-cursos{
+        width: 30rem;
+      }
+      .img-cursos-desktop{
+          display: none;
+      }
+      h1{
+        margin: 0.8rem;
+        background-color:nth($titulos
+        , 1);
+        display: inline-block;
+        padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+        border-radius: 0.9rem;
+    }
+    .contenedor-inscripcion{
+        display: none;
+    }
+}
+.carrousel-desktop{
+    display: none;
+}
+/*Estilos de tablet*/
+@media screen and (min-width:600px) {
+    .carrousel-mobile{
+        display: none;
+    }
+    .img-cursos{
+        width: 45rem;
+        height: 40rem;
+      }
+   .carrousel-desktop{
+    display: flex;
+    width: 100%;
+    img{
+        width: 0px;
+        flex-grow: 1;
+        object-fit: cover;
+        opacity: 0.8;
+        transition: .5s ease;
+    
+       }    
+       img:hover{
+        transform: scale(0.8);
+        opacity: 1;
+        filter: contrast(120%); 
+    
+       }
+
+   }
+   /*Estilos de botones*/
+   .contenedor-inscripcion{
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+        text-decoration: none;
+        color: black;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        margin-right: 0.5rem;
+        margin-left: 0.5;
+    }
+
+}
+
+}
+/*Estilos de desktop*/
+@media screen and (min-width:1024px) {
+    .footer-inicio{
+        display: block;
+        display: flex;
+        background-color: #9d9a93;
+        height: 100px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        ul li{
+            list-style: none;
+        }
+        img{
+            height:50px;
+            width:50px;
+            opacity: 0.8;
+            background-color: #579BB1;
+           }
+           img:hover{
+            transform: scale(1.2);
+            opacity: 1;
+        }
+    }
+    
+    .main-cursos{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "imagen titulo"
+        "imagen p"
+        "imagen registro";
+        .img-cursos-desktop{
+            grid-area: imagen;
+            
+        }
+        .main-cursos h1{
+           grid-area: titulo;
+        }
+        .main-cursos p{
+            grid-area: p;
+        }
+        .main-cursos .contenedor-inscripcion{
+            grid-area: registro;
+        }
+        .img-cursos{
+            display: none;
+        }
+        .img-cursos-desktop{
+            display: block;
+            height: 27rem;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@import "./paginas-scss.scss/cursos-seminarios";
+@import "./paginas-scss.scss/index";
+@import "./paginas-scss.scss/quienes-somos";
+@import "./paginas-scss.scss/inscripcion";
+
+@import "./base/extend";
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    @extend %body;
+}

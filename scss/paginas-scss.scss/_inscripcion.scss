@@ -1,0 +1,106 @@
+@import "../base/extend";
+@import "../base/listas";
+@import "../base/mixin";
+/*mobile First*/
+.footer-inicio{
+    display: none;
+    visibility: hidden;
+}
+.inscripcion-img{
+    display: none;
+}
+/*Estilos de formulario*/
+.form-section{
+    margin-top: 5rem;
+   
+.form{
+    background-color: nth($colores, 5);
+    margin: auto;
+    width: 90%;
+    max-width: 400px;
+    min-width: none;
+    padding:3em 3em;
+    border-radius: 10px;
+    text-align: center;
+    
+    .form-titulo{
+        font-size: 2rem;
+        margin-bottom: .3rem;
+    }
+    .form-link{
+       font-weight:  400;
+       color: black;    
+    }
+    .form-contenedor{
+        margin-top: 1.8rem;
+        display: grid;
+        gap: 2.5em;
+        .form-group{
+            position: relative;
+            --color: #5757577e;
+            .form-input{
+                width: 100%;
+                background-color:nth($colores,5) ;
+                color: #706c6c;
+                font-size: 1rem;
+                padding: .5em .2em;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid var(--color);
+            }
+            .form-input:focus + .form-label,
+            .form-input:not(:placeholder-shown) + .form-label
+            {
+                transform: translateY(-12px) scale(.7);
+                transform-origin:left top;
+                color: #3866f2;
+            }
+            .form-label{
+                color: var(--color);
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                left: 5px;
+                transform: translateY(10px);
+                transition: transform .5s, color .3s;
+
+            }
+        }
+        .form-submit{
+            @extend %botones;
+            font-size: 18px;
+            font-weight: 550;
+            background-color:nth($colores, 3) ;
+            border: none;
+        }
+        .form-submit:hover{
+            @include botones;
+            border: 4px solid nth($colores, 4);
+            background-color: nth($colores, 5);
+            transition: .4s;  
+        }
+    }
+}
+}
+@media screen and (min-width:600px){
+    .inscripcion-main{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        align-items: center;
+        .form-section{
+            width: 50rem;
+        }
+        .inscripcion-img{
+            display: block;
+            width: 40%;
+            height: 40%;
+        }
+    }
+}
+@media screen and (min-width:1024px){
+    .footer-inicio{
+        visibility: visible;
+        margin-top: 5rem;
+    }
+}
