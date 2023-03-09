@@ -2,7 +2,6 @@
 @import "./paginas-scss.scss/index";
 @import "./paginas-scss.scss/quienes-somos";
 @import "./paginas-scss.scss/inscripcion";
-
 @import "./base/extend";
 *{
     margin: 0px;
@@ -11,4 +10,34 @@
 }
 body{
     @extend %body;
+}
+footer{
+    display: none;
+    visibility: hidden;
+}
+@media screen and (min-width:1024px){
+    footer{
+        display: block;
+        visibility: visible;
+        display: flex;
+        background-color: #9d9a93;
+        height: 100px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        ul li{
+            list-style: none;
+        }
+        img{
+            height:50px;
+            width:50px;
+            opacity: 0.8;
+            background-color: #579BB1;
+           }
+           img:hover{
+            transform: scale(1.2);
+            opacity: 1;
+        }
+    }
 }
